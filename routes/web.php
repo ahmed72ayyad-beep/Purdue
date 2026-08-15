@@ -3,9 +3,9 @@
 use App\Http\Controllers\purdueController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/Home', [purdueController::class, 'index'])->name('Home');
-Route::get('/Home2', [purdueController::class, 'index2'])->name('Home2');
-Route::name('Home.')->prefix('Home')->group(function () {
+Route::get('/', [purdueController::class, 'index'])->name('Home');
+// Route::get('/Home2', [purdueController::class, 'index2'])->name('Home2');
+Route::name('Home.')->prefix('')->group(function () {
     Route::get('/About', [purdueController::class, 'About'])->name('About');
     // Route::name('Courses.')->prefix('Courses/')->group(function () {
     // Route::get('/',[purdueController::class,'Courses'])
@@ -17,14 +17,14 @@ Route::name('Home.')->prefix('Home')->group(function () {
     // });
 
 
-    Route::name('Pages.')->prefix('Pages/')->group(function () {
-        Route::get('Instractors/{id?}', [purdueController::class, 'Instractors'])->name('Instractors');
-        Route::get('Events/{id?}', [purdueController::class, 'Events'])->name('Events');
-        Route::get('Pricing', [purdueController::class, 'Pricing'])->name('Pricing');
-        Route::get('FAQ', [purdueController::class, 'FAQ'])->name('FAQ');
-        Route::get('Login', [purdueController::class, 'Login'])->name('Login');
-        Route::get('Register', [purdueController::class, 'Register'])->name('Register');
-    });
+    // Route::name('Pages.')->prefix('Pages/')->group(function () {
+    Route::get('Instractors/{id?}', [purdueController::class, 'Instractors'])->name('Instractors');
+    Route::get('Events/{id?}', [purdueController::class, 'Events'])->name('Events');
+    Route::get('Pricing', [purdueController::class, 'Pricing'])->name('Pricing');
+    Route::get('FAQ', [purdueController::class, 'FAQ'])->name('FAQ');
+    Route::get('Login', [purdueController::class, 'Login'])->name('Login');
+    Route::get('Register', [purdueController::class, 'Register'])->name('Register');
+    // });
 
 
 
@@ -39,6 +39,6 @@ Route::name('Home.')->prefix('Home')->group(function () {
     Route::get('/Blog/{id?}', [purdueController::class, 'Blog'])->name('Blog');
     Route::get('/Contact', [purdueController::class, 'Contact'])->name('Contact');
 });
-Route::fallback(function () {
-    return redirect('/Home');
-});
+// Route::fallback(function () {
+//     return redirect('/Home');
+// });
