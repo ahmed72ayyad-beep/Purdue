@@ -75,11 +75,29 @@ class purdueController extends Controller
     {
         return view('Pages.Login');
     }
+    public function Login_data(Request $request)
+    {
+        // dd($request->all());
+        $username = $request['username'];
+        $password = $request['password'];
+        return view('Pages.Login_data', compact('username', 'password'));
+    }
 
     public function Register()
     {
         return view('Pages.Register');
     }
+    public function Register_data(Request $request)
+    {
+        // dd($_POST);
+        // dd($request->all());
+        $username = $request["username"];
+        $fullname = $request["fullname"];
+        $emailaddress = $request["emailaddress"];
+        $password = $request["password"];
+        return view('Pages.Register_data', compact('username', 'fullname', 'emailaddress', 'password'));
+    }
+
 
     public function Shop($id = null)
     {
@@ -98,6 +116,23 @@ class purdueController extends Controller
     {
         return view('Shop.Checkout');
     }
+    public function Checkout_data(Request $request)
+    {
+        // dd($request->all());
+        $fname = $request['fname'];
+        $lname = $request['lname'];
+        $email = $request['email'];
+        $number = $request['number'];
+        $country_name = $request['country_name'];
+        $province = $request['province'];
+        $address1 = $request['address1'];
+        $address2 = $request['address2'];
+        $Postal = $request['Postal'];
+        $company_name = $request['company_name'];
+
+        return view('Shop.Checkout_data', compact('fname', 'lname', 'email', 'number', 'country_name', 'province', 'address1', 'address2', 'Postal', 'company_name'));
+    }
+
 
     public function Blog($id = null)
     {
@@ -110,6 +145,21 @@ class purdueController extends Controller
     public function Contact()
     {
         return view('Contact');
+    }
+    public function Contact_data(Request $request)
+    {
+        // dd($request->all());
+        // dd($request['email']);
+        $name = $request['name'];
+
+        $email = $request['email'];
+
+
+        $subject = $request['subject'];
+
+
+        $message = $request['message'];
+        return view('Contact_data', compact('name', 'email', 'subject', 'message'));
     }
 
 
@@ -138,5 +188,15 @@ class purdueController extends Controller
         } else {
             return view('Courses.Courses_Single')->with('id', $id);
         }
+    }
+
+
+
+
+    public function subscribe_data(Request $request)
+    {
+        $email = $request['email'];
+        // dd($email);
+        return view('subscribe_data', compact('email'));
     }
 }

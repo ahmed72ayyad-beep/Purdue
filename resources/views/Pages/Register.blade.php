@@ -26,33 +26,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-xs-12">
-                    <div class="register">
-                        <h4 class="login_register_title">Create a new account:</h4>
-                        <div class="form-group">
-                            <label for="">Username</label>
-                            <input type="text" id="contact-name" class=" form-control requiredField input-label"
-                                name="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Full Name</label>
-                            <input type="text" id="contact-name" class=" form-control requiredField input-label"
-                                name="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Email Address</label>
-                            <input type="email" id="contact-email" class="form-control requiredField input-label"
-                                name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="password" id="contact-email" class="form-control requiredField input-label"
-                                name="password">
-                        </div>
+                    <h4 class="login_register_title">Create a new account:</h4>
+                    <form action="{{ route('Home.Register') }}" class="register" method="POST">
+                        {{-- Username,Full Name,Email Address,Password --}}
+                        <x-input class="form-control requiredField input-label" name="username" label="User Name" />
+                        <x-input class="form-control requiredField input-label" name="fullname" label="Full Name" />
+                        <x-input class="form-control requiredField input-label" name="emailaddress" label="Email Address"
+                            type="email" />
+                        <x-input class="form-control requiredField input-label" name="password" type="password"
+                            label="Password" />
+
+                        <button class="btn_one" type="submit" name="submit">Signup Now</button>
                         <div class="form-group col-lg-12">
-                            <button class="btn_one" type="submit" name="submit">Signup Now</button>
                         </div>
-                        <p>Already have an account? <a href="{{ route('Home.Pages.Login') }}">Login</a></p>
-                    </div>
+                        <p>Already have an account? <a href="{{ route('Home.Login') }}">Login</a></p>
+                    </form>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->

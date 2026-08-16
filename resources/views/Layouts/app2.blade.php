@@ -26,19 +26,14 @@
     <!--- owl carousel Css-->
     <link rel="stylesheet" href="{{ asset('owlcarousel/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/css/owl.theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Slicknav.css') }}">
     <!-- MAGNIFIC CSS -->
-
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/niceselect.css') }}">
     <!--jquery-simple-mobilemenu Css-->
     <link rel="stylesheet" href="{{ asset('css/jquery-simple-mobilemenu.css') }}">
     <!-- animate CSS -->
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -221,6 +216,33 @@
         <!-- END NAVBAR-->
         @yield('Content')
 
+        <!-- START NEWSLETTER -->
+        <section class="newsletter_area section-padding">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-6 offset-lg-3 col-sm-12 col-xs-12">
+                        <div class="subs_form">
+                            <h3>Subscripbe to our newsletter, We don't make any spam.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim</p>
+
+
+                            <form action="{{ route('Home.subscribe') }}" method="POST" class="home_subs">
+                                <x-input type="email" class="subscribe__input"
+                                    placeholder="Enter your Email Address" name="email" />
+                                {{-- <input type="text" class="subscribe__input" placeholder="Enter your Email Address"> --}}
+                                <button style="margin: 0%; top: 27%;" type="submit"
+                                    class="subscribe__btn">Subscribe</button>
+                            </form>
+
+
+
+
+
+                        </div>
+                    </div><!-- END COL -->
+                </div><!-- END ROW -->
+            </div><!--- END CONTAINER -->
+        </section>
         <!-- START FOOTER -->
         <div class="footer section-padding">
             <div class="container">
@@ -326,7 +348,7 @@
         <!-- END FOOTER -->
 
         <!-- Latest jQuery -->
-        <script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-1.12.4.min') }}.js"></script>
         <!-- Latest compiled and minified Bootstrap -->
         <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
         <!-- owl-carousel min js  -->
@@ -334,7 +356,7 @@
         <!-- jquery-simple-mobilemenu.min -->
         <script src="{{ asset('js/jquery-simple-mobilemenu.js') }}"></script>
         <!-- magnific-popup js -->
-        <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="a{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
         <!-- jquery mixitup min js -->
         <script src="{{ asset('js/jquery.mixitup.js') }}"></script>
         <!-- GSAP AND LOCOMOTIV JS-->
@@ -344,7 +366,7 @@
         <!-- scrolltopcontrol js -->
         <script src="{{ asset('js/scrolltopcontrol.js') }}"></script>
         <!-- jquery inview js -->
-        <script src="{{ asset('js/jquery.inview.min.js') }}"></script>
+        <script src="a{{ asset('js/jquery.inview.min.js') }}"></script>
         <!-- WOW - Reveal Animations When You Scroll -->
         <script src="{{ asset('js/wow.min.js') }}"></script>
         <!-- scripts js -->

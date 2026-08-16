@@ -1,0 +1,95 @@
+/* تعريف الوزن العادي (Regular) */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../webfonts/CairoPlay-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* تعريف الوزن العريض (Bold) */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../webfonts/CairoPlay-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    height: 100vh;
+    background: #eeeeee;
+
+}
+
+.counter {
+    padding: 10px 20px;
+    width: 50%;
+    height: 45%;
+    background-color: #dddddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-basis: 15%;
+    margin: 0%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0%;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-basis: 15%;
+}
+
+ul {
+    flex-grow: 10;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-evenly;
+}
+
+li {
+    flex-basis: calc(85%/4);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: 600;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 2px solid rgb(77, 94, 252);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    position: relative;
+
+}
+
+li::before {
+    content: "";
+    border-color: transparent transparent transparent red;
+    border-width: 3px;
+    border-style: solid;
+    position: absolute;
+    left: 0px;
+    top: 47%;
+
+}
+
+li:hover {
+    overflow: unset;
+
+}

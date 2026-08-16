@@ -23,21 +23,26 @@ Route::name('Home.')->prefix('')->group(function () {
     Route::get('Pricing', [purdueController::class, 'Pricing'])->name('Pricing');
     Route::get('FAQ', [purdueController::class, 'FAQ'])->name('FAQ');
     Route::get('Login', [purdueController::class, 'Login'])->name('Login');
+    Route::post('Login', [purdueController::class, 'Login_data']);
     Route::get('Register', [purdueController::class, 'Register'])->name('Register');
+    Route::post('Register', [purdueController::class, 'Register_data']);
     // });
 
 
 
-    Route::get('Shop/{di?}', [purdueController::class, 'Shop'])->name("Shop");
     Route::name('Shop.')->prefix('Shop/')->group(function () {
-        Route::get('/Cart', [purdueController::class, 'Cart'])->name("Cart");
-        Route::get('/Checkout', [purdueController::class, 'Checkout'])->name("Checkout");
+    Route::get('/Cart', [purdueController::class, 'Cart'])->name("Cart");
+    Route::get('/Checkout', [purdueController::class, 'Checkout'])->name("Checkout");
+    Route::post('/Checkout', [purdueController::class, 'Checkout_data']);
     });
+    Route::get('Shop/{id?}', [purdueController::class, 'Shop'])->name("Shop");
 
 
 
     Route::get('/Blog/{id?}', [purdueController::class, 'Blog'])->name('Blog');
     Route::get('/Contact', [purdueController::class, 'Contact'])->name('Contact');
+    Route::post('/Contact', [purdueController::class, 'Contact_data']);
+    Route::post('/subscribe', [purdueController::class, 'subscribe_data'])->name('subscribe');
 });
 // Route::fallback(function () {
 //     return redirect('/Home');

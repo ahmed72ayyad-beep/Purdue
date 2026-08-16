@@ -1,4 +1,4 @@
-@extends('Layouts.app')
+@extends('Layouts.app2')
 @section('Title', 'Not Found 404')
 @section('Content')
     <!-- START SECTION TOP -->
@@ -39,22 +39,5 @@ ll-img/404.svg" class="img-fluid" alt="404 error" />
     </section>
     <!-- END 404 -->
 
-    <!-- START NEWSLETTER -->
-    <section class="newsletter_area section-padding">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-6 offset-lg-3 col-sm-12 col-xs-12">
-                    <div class="subs_form">
-                        <h3>Subscripbe to our newsletter, We don't make any spam.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim</p>
-                        <form action="#" class="home_subs">
-                            <input type="text" class="subscribe__input" placeholder="Enter your Email Address">
-                            <button type="button" class="subscribe__btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div><!-- END COL -->
-            </div><!-- END ROW -->
-        </div><!--- END CONTAINER -->
-    </section>
-    <!-- END NEWSLETTER -->
+
 @endsection
